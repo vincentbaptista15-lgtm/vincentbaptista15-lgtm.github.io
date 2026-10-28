@@ -11,13 +11,30 @@ const recipes = [
   {id:"tapsilog",name:"Tapsilog",category:"Breakfast",time:"35 min",difficulty:"Easy",servings:"2 servings",image:"images/tapsilog.jpg",description:"A hearty Filipino breakfast of marinated beef tapa, garlic rice, and a fried egg.",ingredients:["300 g beef sirloin, thinly sliced","2 tbsp soy sauce","1 tbsp calamansi or lemon juice","2 cloves garlic, minced","2 cups cooked rice","2 eggs","1 tbsp cooking oil","Salt and pepper, to taste"],steps:["Combine beef, soy sauce, calamansi juice, garlic, and pepper. Marinate for at least 20 minutes.","Heat a pan with a little oil and cook the beef in batches until browned and cooked through.","In the same pan, add a little oil and sauté one minced garlic clove until fragrant.","Add the cooked rice, season lightly with salt, and stir-fry until hot.","Fry the eggs to your preference and serve with the tapa and garlic rice."]},
   {id:"champorado",name:"Champorado",category:"Breakfast",time:"45 min",difficulty:"Easy",servings:"4 servings",image:"images/champorado.jpg",description:"A comforting chocolate rice porridge, traditionally enjoyed with a little evaporated milk.",ingredients:["1 cup glutinous rice","5 cups water","1/2 cup cocoa powder or chopped tablea","1/3 cup sugar, or to taste","Evaporated milk, for serving","Pinch of salt"],steps:["Rinse the glutinous rice and place it in a pot with the water and salt.","Bring to a boil, then lower the heat and simmer, stirring often, until the rice is soft and the mixture thickens.","Whisk cocoa powder with a little hot water until smooth, or melt the tablea in a small amount of hot water.","Stir the chocolate mixture and sugar into the rice porridge.","Simmer for 5 minutes, then serve warm with evaporated milk."]},
   {id:"arroz-caldo",name:"Arroz Caldo",category:"Breakfast",time:"1 hr",difficulty:"Easy",servings:"4 servings",image:"images/arroz%20caldo.jpg",description:"Ginger-scented chicken and rice porridge finished with calamansi and toasted garlic.",ingredients:["500 g chicken pieces","1 cup rice","6 cups chicken stock or water","1 thumb-sized piece ginger, sliced","1 small onion, chopped","3 cloves garlic, minced","1 tbsp fish sauce","Calamansi and toasted garlic, for serving"],steps:["Sauté garlic, onion, and ginger in a pot until fragrant.","Add the chicken and cook until lightly browned. Stir in the fish sauce.","Add rice and stock, bring to a boil, then lower the heat.","Simmer for 40–45 minutes, stirring occasionally, until the rice breaks down and the chicken is tender. Add water if it gets too thick.","Serve hot with calamansi and toasted garlic."]},
-  {id:"chicken-tinola",name:"Chicken Tinola",category:"Lunch",time:"1 hr",difficulty:"Easy",servings:"4 servings",image:"images/pork%20sinigang.jpg",description:"A light ginger chicken soup with green papaya and leafy moringa or spinach.",ingredients:["700 g chicken pieces","1 small green papaya, peeled and sliced","1 thumb-sized piece ginger, julienned","1 onion, sliced","6 cups water or chicken stock","2 tbsp fish sauce","2 cups chili leaves, spinach, or moringa leaves","1 tbsp cooking oil"],steps:["Heat oil in a pot and sauté ginger and onion until fragrant.","Add chicken and fish sauce. Cook for 4–5 minutes, turning the pieces.","Pour in water or stock and bring to a boil. Skim off any foam.","Cover and simmer for 30 minutes, then add the green papaya and cook until tender.","Stir in the leaves and cook just until wilted. Serve hot with rice."]},
+  {id:"chicken-tinola",name:"Chicken Tinola",category:"Lunch",time:"1 hr",difficulty:"Easy",servings:"4 servings",image:"images/chicken%20tinola.jpg",description:"A light ginger chicken soup with green papaya and leafy moringa or spinach.",ingredients:["700 g chicken pieces","1 small green papaya, peeled and sliced","1 thumb-sized piece ginger, julienned","1 onion, sliced","6 cups water or chicken stock","2 tbsp fish sauce","2 cups chili leaves, spinach, or moringa leaves","1 tbsp cooking oil"],steps:["Heat oil in a pot and sauté ginger and onion until fragrant.","Add chicken and fish sauce. Cook for 4–5 minutes, turning the pieces.","Pour in water or stock and bring to a boil. Skim off any foam.","Cover and simmer for 30 minutes, then add the green papaya and cook until tender.","Stir in the leaves and cook just until wilted. Serve hot with rice."]},
   {id:"beef-kare-kare",name:"Beef Kare-Kare",category:"Lunch",time:"2 hr",difficulty:"Medium",servings:"5 servings",image:"images/beef%20kare%20kare.jpg",description:"A rich peanut stew with tender beef and vegetables, served with bagoong on the side.",ingredients:["700 g beef shank or oxtail","1/2 cup peanut butter","1/4 cup ground toasted rice","1 eggplant, sliced","1 bunch string beans, cut into lengths","1 bunch bok choy","1 onion, quartered","6 cups water","Bagoong, for serving"],steps:["Simmer beef and onion in water until tender, about 1 1/2–2 hours. Reserve the broth.","Whisk peanut butter and ground toasted rice with 1 cup warm broth until smooth.","Return the beef to the pot and stir in the peanut mixture. Simmer gently until thickened.","Add eggplant and string beans; cook until tender. Add bok choy near the end.","Serve hot with bagoong on the side."]},
   {id:"pancit-bihon",name:"Pancit Bihon",category:"Lunch",time:"45 min",difficulty:"Easy",servings:"4 servings",image:"images/pancit%20bihon.jpg",description:"Stir-fried rice noodles with chicken, vegetables, and a bright squeeze of calamansi.",ingredients:["250 g bihon rice noodles","250 g chicken breast, sliced","1 carrot, cut into strips","1 cup cabbage, shredded","1 small onion, sliced","2 cloves garlic, minced","3 tbsp soy sauce","2 cups chicken stock","Calamansi, for serving"],steps:["Soak the bihon noodles in warm water until pliable, then drain.","Sauté garlic and onion in a large pan. Add chicken and cook through.","Add carrot, cabbage, soy sauce, and stock. Bring to a simmer.","Add the noodles and toss gently until they absorb the liquid and become tender.","Serve with calamansi wedges."]},
   {id:"bicol-express",name:"Bicol Express",category:"Dinner",time:"50 min",difficulty:"Medium",servings:"4 servings",image:"images/bicol%20express.jpg",description:"A creamy, spicy pork stew simmered with coconut milk, chilies, and shrimp paste.",ingredients:["600 g pork belly, cubed","1 can (400 ml) coconut milk","1 cup coconut cream","5 green chilies, sliced","1 small onion, chopped","3 cloves garlic, minced","1 tbsp shrimp paste (bagoong alamang)","1 tbsp cooking oil"],steps:["Heat oil in a pot and sauté garlic and onion until fragrant.","Add pork and cook until lightly browned.","Stir in shrimp paste, then pour in coconut milk.","Cover and simmer gently until the pork is tender and the sauce thickens, about 30 minutes.","Add chilies and coconut cream. Simmer for 5–8 minutes and serve with rice."]},
   {id:"beef-mechado",name:"Beef Mechado",category:"Dinner",time:"2 hr",difficulty:"Medium",servings:"5 servings",image:"images/beef%20mechado.jpg",description:"A Filipino tomato-based beef stew with potatoes, carrots, and a touch of calamansi.",ingredients:["700 g beef chuck, cubed","1 onion, chopped","3 cloves garlic, minced","1 can (400 g) crushed tomatoes","2 cups beef stock or water","2 potatoes, cubed","1 carrot, sliced","2 tbsp soy sauce","1 tbsp calamansi or lemon juice","2 tbsp cooking oil"],steps:["Heat oil in a heavy pot and brown the beef in batches. Set aside.","Sauté onion and garlic in the same pot, then stir in crushed tomatoes.","Return beef to the pot and add stock, soy sauce, and calamansi juice.","Cover and simmer gently until the beef is tender, about 1 1/2 hours. Add a little water if needed.","Add potatoes and carrot; simmer until tender. Taste and season before serving."]},
   {id:"laing",name:"Laing",category:"Dinner",time:"1 hr 15 min",difficulty:"Easy",servings:"4 servings",image:"images/laing.jpg",description:"A Bicolano dish of dried taro leaves slowly cooked in coconut milk and chilies.",ingredients:["50 g dried taro leaves","400 ml coconut milk","200 ml coconut cream","100 g pork belly, sliced (optional)","1 thumb-sized piece ginger, sliced","3 cloves garlic, minced","1 small onion, sliced","3 small chilies","1 tbsp shrimp paste, optional"],steps:["Place the taro leaves in a pot with coconut milk, ginger, garlic, onion, chilies, and shrimp paste if using.","Bring to a gentle simmer without stirring so the leaves settle into the liquid.","Cover and cook on low heat for 35–45 minutes, until the leaves are soft and fully cooked.","Stir in coconut cream and add the pork if using; simmer until the pork is cooked and the sauce is rich.","Taste and adjust seasoning. Serve hot with rice."]}
 ];
+
+// Filter tags: `category` stays the primary label shown on cards (and decides the
+// Breakfast/Lunch/Dinner grouping); `categories` is what the filter buttons match.
+const extraCategories = {
+  "lumpia": ["Pork"],
+  "tokwa-baboy": ["Pork"],
+  "bicol-express": ["Pork"],
+  "laing": ["Pork", "Vegetable"],
+  "lumpiang-togue": ["Vegetable"],
+  "arroz-caldo": ["Chicken"],
+  "chicken-tinola": ["Chicken"],
+  "pancit-bihon": ["Chicken"],
+  "tapsilog": ["Beef"],
+  "beef-kare-kare": ["Beef"],
+  "beef-mechado": ["Beef"]
+};
+recipes.forEach(r => { r.categories = [r.category, ...(extraCategories[r.id] || [])]; });
 
 const tips = [
   {icon:"🧄",title:"Make garlic fragrant, not burnt",text:"Cook garlic over medium or medium-low heat and stir often. Add it after the oil warms up; burnt garlic can taste bitter.",tags:"garlic burn oil"},
@@ -36,22 +53,28 @@ const themeToggle = document.getElementById("themeToggle");
 let activeCategory = "All";
 let selectedRecipe = null;
 let currentStep = 0;
+let lastCard = null;
 
-const savedTheme = localStorage.getItem("pinoyKitchenTheme");
-document.body.classList.toggle("dark-mode", savedTheme === "dark");
-themeToggle.textContent = savedTheme === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
-themeToggle.setAttribute("aria-pressed", String(savedTheme === "dark"));
+const root = document.documentElement;
+let storedTheme = null;
+try { storedTheme = localStorage.getItem("pinoyKitchenTheme"); } catch (e) {}
+function applyTheme(isDark) {
+  root.classList.toggle("dark-mode", isDark);
+  themeToggle.textContent = isDark ? "☀️ Light mode" : "🌙 Dark mode";
+  themeToggle.setAttribute("aria-pressed", String(isDark));
+}
+// Saved choice wins; otherwise follow the visitor's system setting.
+applyTheme(storedTheme ? storedTheme === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches);
 themeToggle.addEventListener("click", () => {
-  const isDarkMode = document.body.classList.toggle("dark-mode");
-  themeToggle.textContent = isDarkMode ? "☀️ Light mode" : "🌙 Dark mode";
-  themeToggle.setAttribute("aria-pressed", String(isDarkMode));
-  localStorage.setItem("pinoyKitchenTheme", isDarkMode ? "dark" : "light");
+  const isDark = !root.classList.contains("dark-mode");
+  applyTheme(isDark);
+  try { localStorage.setItem("pinoyKitchenTheme", isDark ? "dark" : "light"); } catch (e) {}
 });
 
 function renderRecipes() {
   const term = searchInput.value.trim().toLowerCase();
-  const visible = recipes.filter(r => (activeCategory === "All" || r.category === activeCategory) &&
-    (r.name.toLowerCase().includes(term) || r.description.toLowerCase().includes(term) || r.category.toLowerCase().includes(term)));
+  const visible = recipes.filter(r => (activeCategory === "All" || r.categories.includes(activeCategory)) &&
+    (!term || [r.name, r.description, ...r.categories, ...r.ingredients].join(" ").toLowerCase().includes(term)));
   const mealCategories = ["Breakfast", "Lunch", "Dinner"];
   const renderCards = items => items.map(r => `
     <article class="recipe-card" tabindex="0" role="button" aria-label="View ${r.name}" data-id="${r.id}">
@@ -68,7 +91,8 @@ function renderRecipes() {
   });
   emptyMessage.classList.toggle("hidden", visible.length > 0);
 }
-function openRecipe(id) {
+function openRecipe(id, trigger = null) {
+  lastCard = trigger;
   selectedRecipe = recipes.find(r => r.id === id);
   if (!selectedRecipe) return;
   currentStep = 0;
@@ -82,6 +106,7 @@ function openRecipe(id) {
   detailSection.classList.remove("hidden");
   renderStep();
   detailSection.scrollIntoView({behavior:"smooth",block:"start"});
+  document.getElementById("detailTitle").focus({preventScroll:true});
 }
 function renderStep() {
   if (!selectedRecipe) return;
@@ -96,6 +121,12 @@ function renderStep() {
 function clearSelection() {
   selectedRecipe = null;
   detailSection.classList.add("hidden");
+  if (lastCard && document.body.contains(lastCard)) {
+    lastCard.scrollIntoView({behavior:"smooth",block:"center"});
+    lastCard.focus({preventScroll:true});
+  } else {
+    document.getElementById("recipes").scrollIntoView({behavior:"smooth"});
+  }
   showToast("Selection cleared!");
 }
 function showToast(message) {
@@ -121,12 +152,12 @@ searchInput.addEventListener("input", renderRecipes);
 document.querySelectorAll(".recipe-grid").forEach(grid => {
   grid.addEventListener("click", e => {
     const card = e.target.closest("[data-id]");
-    if (card) openRecipe(card.dataset.id);
+    if (card) openRecipe(card.dataset.id, card);
   });
   grid.addEventListener("keydown", e => {
     if (e.key === "Enter" || e.key === " ") {
       const card = e.target.closest("[data-id]");
-      if (card) { e.preventDefault(); openRecipe(card.dataset.id); }
+      if (card) { e.preventDefault(); openRecipe(card.dataset.id, card); }
     }
   });
 });
@@ -146,8 +177,30 @@ document.getElementById("clearSelection").addEventListener("click", clearSelecti
 document.getElementById("tipSearch").addEventListener("input", e => renderTips(e.target.value));
 document.getElementById("showAllTips").addEventListener("click", () => { document.getElementById("tipSearch").value = ""; renderTips(); });
 document.getElementById("backToTop").addEventListener("click", () => window.scrollTo({top:0,behavior:"smooth"}));
-document.getElementById("menuToggle").addEventListener("click", () => document.getElementById("navLinks").classList.toggle("open"));
-document.querySelectorAll("#navLinks a").forEach(a => a.addEventListener("click", () => document.getElementById("navLinks").classList.remove("open")));
+const menuToggle = document.getElementById("menuToggle");
+const navLinks = document.getElementById("navLinks");
+function setMenu(open) { navLinks.classList.toggle("open", open); menuToggle.setAttribute("aria-expanded", String(open)); }
+menuToggle.addEventListener("click", () => setMenu(!navLinks.classList.contains("open")));
+document.querySelectorAll("#navLinks a").forEach(a => a.addEventListener("click", () => setMenu(false)));
 document.getElementById("year").textContent = new Date().getFullYear();
+// Recipe structured data so search engines can show rich recipe results.
+function toIsoDuration(t) {
+  const h = /(\d+)\s*hr/.exec(t), m = /(\d+)\s*min/.exec(t);
+  return "PT" + (h ? h[1] + "H" : "") + (m ? m[1] + "M" : "");
+}
+function injectRecipeSchema() {
+  const data = recipes.map(r => ({
+    "@context": "https://schema.org", "@type": "Recipe",
+    name: r.name, description: r.description,
+    image: new URL(r.image, location.href).href,
+    totalTime: toIsoDuration(r.time), recipeYield: r.servings, recipeCategory: r.category,
+    recipeIngredient: r.ingredients,
+    recipeInstructions: r.steps.map(text => ({"@type": "HowToStep", text}))
+  }));
+  const el = document.createElement("script");
+  el.type = "application/ld+json"; el.textContent = JSON.stringify(data);
+  document.head.appendChild(el);
+}
+injectRecipeSchema();
 renderRecipes();
 renderTips();
