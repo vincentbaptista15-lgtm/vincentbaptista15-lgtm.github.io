@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinoy Kitchen | Filipino Recipes</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <a class="brand" href="#" aria-label="Pinoy Kitchen home">🍲 Pinoy<span>Kitchen</span></a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙 Dark mode</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#recipes">Recipes</a><a href="#tips">Cooking Tips</a><a href="#about">About</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">LASANG PINOY, LUTONG BAHAY</p>
+      <h1>Discover your next<br><span>favorite Filipino dish.</span></h1>
+      <p>Easy recipes, familiar ingredients, and step-by-step instructions for your home kitchen.</p>
+      <a class="primary-btn" href="#recipes">Explore recipes ↓</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome-panel">
+      <div><p class="eyebrow">WELCOME TO YOUR KITCHEN</p><h2>What would you like to cook today?</h2><p>Choose a dish, let luck decide, or learn a new kitchen trick.</p></div>
+      <button class="primary-btn" id="randomBtn">🎲 Surprise me</button>
+    </section>
+
+    <section id="recipes" class="section">
+      <div class="section-heading"><div><p class="eyebrow">FROM OUR RECIPE BOX</p><h2>Filipino favorites</h2></div>
+        <input id="searchInput" type="search" placeholder="Search dishes..." aria-label="Search dishes">
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-category="All">All dishes</button>
+        <button class="filter" data-category="Chicken">Chicken</button>
+        <button class="filter" data-category="Pork">Pork</button>
+        <button class="filter" data-category="Vegetable">Vegetable</button>
+        <button class="filter" data-category="Snack">Snacks</button>
+        <button class="filter" data-category="Appetizer">Appetizers</button>
+        <button class="filter" data-category="Breakfast">Breakfast</button>
+        <button class="filter" data-category="Lunch">Lunch</button>
+        <button class="filter" data-category="Dinner">Dinner</button>
+      </div>
+      <div class="recipe-grid" id="recipeGrid"></div>
+      <section class="meal-section hidden" id="breakfastSection" aria-labelledby="breakfastHeading">
+        <h3 class="meal-heading" id="breakfastHeading">Breakfast</h3>
+        <div class="recipe-grid" id="breakfastGrid"></div>
+      </section>
+      <section class="meal-section hidden" id="lunchSection" aria-labelledby="lunchHeading">
+        <h3 class="meal-heading" id="lunchHeading">Lunch</h3>
+        <div class="recipe-grid" id="lunchGrid"></div>
+      </section>
+      <section class="meal-section hidden" id="dinnerSection" aria-labelledby="dinnerHeading">
+        <h3 class="meal-heading" id="dinnerHeading">Dinner</h3>
+        <div class="recipe-grid" id="dinnerGrid"></div>
+      </section>
+      <p id="emptyMessage" class="empty hidden">No recipes found. Try another search.</p>
+    </section>
+
+    <section id="recipeDetail" class="detail-section hidden" aria-live="polite">
+      <div class="detail-header"><div><p class="eyebrow">LET'S GET COOKING</p><h2 id="detailTitle">Recipe</h2><p id="detailDescription"></p></div><button class="icon-btn" id="closeDetail" aria-label="Close recipe">✕</button></div>
+      <div class="detail-layout">
+        <img id="detailImage" class="detail-image" src="" alt="">
+        <div class="detail-info"><div class="meta" id="detailMeta"></div><h3>Ingredients</h3><ul id="ingredientList"></ul></div>
+      </div>
+      <div class="steps-area"><div class="steps-title"><h3>Step-by-step instructions</h3><span id="stepCounter">Step 1 of 1</span></div>
+        <div class="step-card"><span class="step-number" id="stepNumber">01</span><p id="stepText"></p></div>
+        <div class="step-controls"><button class="secondary-btn" id="prevStep">← Previous</button><button class="primary-btn" id="nextStep">Next step →</button></div>
+      </div>
+      <button class="secondary-btn clear-btn" id="clearSelection">Clear selection</button>
+    </section>
+
+    <section id="tips" class="section tips-section">
+      <div class="section-heading"><div><p class="eyebrow">SMALL TRICKS, BETTER FOOD</p><h2>Chef's cooking tips</h2></div></div>
+      <div class="tip-tools"><input id="tipSearch" type="search" placeholder="Search tips (e.g. garlic, vinegar)"><button class="secondary-btn" id="showAllTips">Show all tips</button></div>
+      <div class="tips-grid" id="tipsGrid"></div>
+    </section>
+
+    <section id="about" class="about-panel"><div class="about-icon">🥘</div><div><p class="eyebrow">MADE FOR HOME COOKS</p><h2>Good food brings us together.</h2><p>Pinoy Kitchen is a simple guide to Filipino comfort food. Start with a favorite, follow the steps, and make the recipe your own.</p></div></section>
+  </main>
+
+  <footer><p>© <span id="year"></span> Pinoy Kitchen · Lutong bahay, with love.</p><button id="backToTop" class="text-btn">Back to top ↑</button></footer>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
