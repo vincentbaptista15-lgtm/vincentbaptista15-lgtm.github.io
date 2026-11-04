@@ -79,7 +79,7 @@ let selectedRecipe = null;
 let currentStep = 0;
 let lastCard = null;
 
-const root = document.documentElement;
+const root = document.body;
 let storedTheme = null;
 try { storedTheme = localStorage.getItem("pinoyKitchenTheme"); } catch (e) {}
 function applyTheme(isDark) {
