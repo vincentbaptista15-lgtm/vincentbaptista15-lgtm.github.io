@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinoy Kitchen | Filipino Recipes</title>
+  <meta name="description" content="Discover Filipino home-cooking recipes, from chicken adobo and sinigang to step-by-step favorites and kitchen tips.">
+  <meta name="robots" content="index, follow">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Pinoy Kitchen | Filipino Recipes">
+  <meta property="og:description" content="Discover Filipino home-cooking recipes, step-by-step favorites, and practical kitchen tips.">
+  <meta name="twitter:card" content="summary">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="hero">
+    <nav class="navbar">
+      <a class="brand" href="#" aria-label="Pinoy Kitchen home">🍲 Pinoy<span>Kitchen</span></a>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-label="Toggle dark mode" aria-pressed="false">🌙 Dark mode</button>
+      <button class="account-btn" id="accountButton" type="button">Log in</button>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">☰</button>
+      <div class="nav-links" id="navLinks">
+        <a href="#recipes">Recipes</a><a href="#createRecipe">Create a recipe</a><a href="#tips">Cooking Tips</a><a href="#about">About</a>
+      </div>
+    </nav>
+    <div class="hero-content">
+      <p class="eyebrow">LASANG PINOY, LUTONG BAHAY</p>
+      <h1>Discover your next<br><span>favorite Filipino dish.</span></h1>
+      <p>Easy recipes, familiar ingredients, and step-by-step instructions for your home kitchen.</p>
+      <a class="primary-btn" href="#recipes">Explore recipes ↓</a>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="welcome-panel">
+      <div><p class="eyebrow">WELCOME TO YOUR KITCHEN</p><h2>What would you like to cook today?</h2><p>Choose a dish, let luck decide, or learn a new kitchen trick.</p></div>
+      <button class="primary-btn" id="randomBtn">🎲 Surprise me</button>
+    </section>
+
+    <section id="userProfile" class="profile-panel hidden" aria-live="polite">
+      <div class="profile-avatar" id="profileAvatar">👩‍🍳</div>
+      <div>
+        <p class="eyebrow">YOUR PROFILE</p>
+        <h2 id="profileName">Guest</h2>
+        <p id="profileEmail">Sign in to save your own recipes.</p>
+      </div>
+      <div class="profile-stats">
+        <div>
+          <span class="stat-label">Custom recipes</span>
+          <strong id="profileRecipeCount">0</strong>
+        </div>
+      </div>
+    </section>
+
+    <section id="myRecipes" class="section my-recipes-section hidden">
+      <div class="section-heading"><div><p class="eyebrow">YOUR CREATIONS</p><h2>My recipes</h2></div></div>
+      <div class="recipe-grid" id="myRecipesGrid"></div>
+      <p id="myRecipesEmpty" class="empty hidden">No saved recipes yet. Create one from the form below.</p>
+    </section>
+
+    <section id="recipes" class="section">
+      <div class="section-heading"><div><p class="eyebrow">FROM OUR RECIPE BOX</p><h2>Filipino favorites</h2></div>
+        <input id="searchInput" type="search" placeholder="Search dishes..." aria-label="Search dishes">
+      </div>
+      <div class="filters" id="filters">
+        <button class="filter active" data-category="All">All dishes</button>
+        <button class="filter" data-category="Chicken">Chicken</button>
+        <button class="filter" data-category="Pork">Pork</button>
+        <button class="filter" data-category="Vegetable">Vegetable</button>
+        <button class="filter" data-category="Snack">Snacks</button>
+        <button class="filter" data-category="Appetizer">Appetizers</button>
+        <button class="filter" data-category="Breakfast">Breakfast</button>
+        <button class="filter" data-category="Lunch">Lunch</button>
+        <button class="filter" data-category="Dinner">Dinner</button>
+      </div>
+      <div class="recipe-grid" id="recipeGrid"></div>
+      <section class="meal-section hidden" id="breakfastSection" aria-labelledby="breakfastHeading">
+        <h3 class="meal-heading" id="breakfastHeading">Breakfast</h3>
+        <div class="recipe-grid" id="breakfastGrid"></div>
+      </section>
+      <section class="meal-section hidden" id="lunchSection" aria-labelledby="lunchHeading">
+        <h3 class="meal-heading" id="lunchHeading">Lunch</h3>
+        <div class="recipe-grid" id="lunchGrid"></div>
+      </section>
+      <section class="meal-section hidden" id="dinnerSection" aria-labelledby="dinnerHeading">
+        <h3 class="meal-heading" id="dinnerHeading">Dinner</h3>
+        <div class="recipe-grid" id="dinnerGrid"></div>
+      </section>
+      <p id="emptyMessage" class="empty hidden">No recipes found. Try another search.</p>
+    </section>
+
+    <section id="recipeDetail" class="detail-section hidden" aria-live="polite">
+      <div class="detail-header"><div><p class="eyebrow">LET'S GET COOKING</p><h2 id="detailTitle">Recipe</h2><p id="detailDescription"></p></div><button class="icon-btn" id="closeDetail" aria-label="Close recipe">✕</button></div>
+      <div class="detail-layout">
+        <img id="detailImage" class="detail-image" src="" alt="">
+        <div class="detail-info"><div class="meta" id="detailMeta"></div><h3>Ingredients</h3><ul id="ingredientList"></ul></div>
+      </div>
+      <div class="steps-area"><div class="steps-title"><h3>Step-by-step instructions</h3><span id="stepCounter">Step 1 of 1</span></div>
+        <div class="step-card"><span class="step-number" id="stepNumber">01</span><p id="stepText"></p></div>
+        <div class="step-controls"><button class="secondary-btn" id="prevStep">← Previous</button><button class="primary-btn" id="nextStep">Next step →</button></div>
+      </div>
+      <button class="secondary-btn clear-btn" id="clearSelection">Clear selection</button>
+    </section>
+
+    <section id="createRecipe" class="section create-recipe-section" aria-labelledby="createRecipeHeading">
+      <div class="section-heading"><div><p class="eyebrow">YOUR KITCHEN, YOUR RULES</p><h2 id="createRecipeHeading">Create your own recipe</h2><p>Share a family favorite or invent something new with the ingredients you have.</p></div></div>
+      <div id="loginRequiredMessage" class="login-required hidden">
+        <p>Log in to create and save your own recipe.</p>
+        <button class="primary-btn" type="button" id="loginToCreateRecipe">Log in</button>
+      </div>
+      <form id="createRecipeForm" class="recipe-form">
+        <div class="form-row">
+          <label>Recipe name<input name="name" type="text" maxlength="70" placeholder="e.g. Lola's garlic noodles" required></label>
+          <label>Category<select name="category" required><option>Chicken</option><option>Pork</option><option>Beef</option><option>Vegetable</option><option>Snack</option><option>Dessert</option><option>Other</option></select></label>
+        </div>
+        <label>Short description<input name="description" type="text" maxlength="180" placeholder="What makes this dish special?" required></label>
+        <div class="form-row">
+          <label>Ingredients <span>One per line</span><textarea name="ingredients" rows="5" placeholder="2 cups cooked rice&#10;3 cloves garlic, minced" required></textarea></label>
+          <label>Cooking steps <span>One step per line</span><textarea name="steps" rows="5" placeholder="Warm the pan over medium heat.&#10;Add the ingredients and stir." required></textarea></label>
+        </div>
+        <button class="primary-btn" type="submit">＋ Add my recipe</button>
+      </form>
+    </section>
+
+    <section id="tips" class="section tips-section">
+      <div class="section-heading"><div><p class="eyebrow">SMALL TRICKS, BETTER FOOD</p><h2>Chef's cooking tips</h2></div></div>
+      <div class="tip-tools"><input id="tipSearch" type="search" placeholder="Search tips (e.g. garlic, vinegar)"><button class="secondary-btn" id="showAllTips">Show all tips</button></div>
+      <div class="tips-grid" id="tipsGrid"></div>
+    </section>
+
+    <section id="about" class="about-panel"><div class="about-icon">🥘</div><div><p class="eyebrow">MADE FOR HOME COOKS</p><h2>Good food brings us together.</h2><p>Pinoy Kitchen is a simple guide to Filipino comfort food. Start with a favorite, follow the steps, and make the recipe your own.</p></div></section>
+  </main>
+
+  <footer><p>© <span id="year"></span> Pinoy Kitchen · Lutong bahay, with love.</p><button id="backToTop" class="text-btn">Back to top ↑</button></footer>
+
+  <dialog id="authDialog" class="auth-dialog">
+    <div class="auth-modal">
+      <button id="authClose" class="icon-btn" type="button" aria-label="Close login dialog">✕</button>
+      <p class="eyebrow">ACCOUNT</p>
+      <h2 id="authHeading">Log in to your account</h2>
+      <p id="authMessage" class="auth-message"></p>
+
+      <form id="loginForm" class="auth-form">
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" placeholder="Your password" required>
+        </label>
+        <button class="primary-btn" type="submit" data-auth-action="true">Log in</button>
+      </form>
+
+      <form id="registerForm" class="auth-form hidden">
+        <label>
+          Display name
+          <input type="text" name="displayName" placeholder="Chef name" required>
+        </label>
+        <label>
+          Email
+          <input type="email" name="email" placeholder="you@example.com" required>
+        </label>
+        <label>
+          Password
+          <input type="password" name="password" placeholder="At least 6 characters" required>
+        </label>
+        <button class="primary-btn" type="submit" data-auth-action="true">Create account</button>
+      </form>
+
+      <div class="auth-links">
+        <button type="button" class="secondary-btn" id="googleSignIn" data-auth-action="true">Continue with Google</button>
+        <button type="button" class="text-btn" id="showRegister">Create account</button>
+        <button type="button" class="text-btn hidden" id="showLogin">Back to login</button>
+      </div>
+    </div>
+  </dialog>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+  <script type="module" src="auth.js"></script>
+</body>
+</html>
