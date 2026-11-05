@@ -154,16 +154,28 @@
 
       <form id="registerForm" class="auth-form hidden">
         <label>
-          Display name
-          <input type="text" name="displayName" placeholder="Chef name" required>
+          Username
+          <input type="text" name="displayName" placeholder="e.g. PinoyChef_01" minlength="3" maxlength="20" pattern="[A-Za-z0-9_]{3,20}" title="Use 3–20 letters, numbers, or underscores." autocomplete="nickname" aria-describedby="usernameHint" required>
         </label>
+        <p id="usernameHint" class="auth-hint">Use 3–20 letters, numbers, or underscores. This is your profile name; sign in with your email.</p>
         <label>
           Email
-          <input type="email" name="email" placeholder="you@example.com" required>
+          <input type="email" name="email" placeholder="you@example.com" autocomplete="email" required>
         </label>
         <label>
           Password
-          <input type="password" name="password" placeholder="At least 6 characters" required>
+          <input type="password" name="password" placeholder="Create a strong password" minlength="12" autocomplete="new-password" aria-describedby="passwordRequirements" required>
+        </label>
+        <ul id="passwordRequirements" class="password-requirements">
+          <li data-password-rule="length">At least 12 characters</li>
+          <li data-password-rule="lowercase">A lowercase letter</li>
+          <li data-password-rule="uppercase">An uppercase letter</li>
+          <li data-password-rule="number">A number</li>
+          <li data-password-rule="symbol">A symbol, such as ! or #</li>
+        </ul>
+        <label>
+          Confirm password
+          <input type="password" name="confirmPassword" placeholder="Enter your password again" autocomplete="new-password" required>
         </label>
         <button class="primary-btn" type="submit" data-auth-action="true">Create account</button>
       </form>

@@ -30,15 +30,19 @@ body.dark-mode .step-number{color:#142018}
 .my-recipes-section{margin-top:8px}
 .login-required{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:16px 20px;border:1px dashed var(--green);border-radius:12px;background:var(--mint);margin:18px 0 22px}
 .login-required p{margin:0;color:var(--green-dark);font-weight:700}
-.auth-dialog{border:0;border-radius:18px;padding:0;background:transparent;max-width:480px;width:min(92vw,480px)}
+.auth-dialog{border:0;border-radius:18px;padding:0;background:transparent;max-width:480px;width:min(92vw,480px);max-height:90vh}
 .auth-dialog::backdrop{background:rgba(8,15,12,.62)}
-.auth-modal{position:relative;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:24px 22px 20px;box-shadow:var(--shadow)}
+.auth-modal{position:relative;background:var(--white);color:var(--ink);border:1px solid var(--line);border-radius:18px;padding:24px 22px 20px;box-shadow:var(--shadow);max-height:90vh;overflow-y:auto}
 .auth-modal h2{margin:0 0 8px;font-size:1.8rem}
 .auth-message{min-height:24px;margin:0 0 16px;color:var(--muted);font-size:.92rem}
 .auth-form{display:grid;gap:14px}
 .auth-form label{display:grid;gap:7px;font-weight:700;font-size:.9rem}
 .auth-form input{width:100%;border:1px solid var(--line);border-radius:9px;padding:10px 12px;background:#fff;color:var(--ink)}
 .auth-form input:focus{outline:2px solid #285c4355;border-color:var(--green)}
+.auth-hint{margin:-8px 0 0;color:var(--muted);font-size:.82rem}
+.password-requirements{display:grid;gap:4px;margin:-8px 0 0;padding-left:20px;color:var(--muted);font-size:.82rem}
+.password-requirements li.met{color:var(--green-dark)}
+.password-requirements li.met::marker{color:var(--green)}
 .auth-links{display:grid;gap:12px;margin-top:16px}
 .secondary-btn{background:#edf3ee;color:var(--green-dark);border:1px solid var(--line)}
 .secondary-btn:hover{background:#e0eadf}

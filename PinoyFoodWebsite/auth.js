@@ -5,6 +5,7 @@ const authMessage = document.getElementById("authMessage");
 const accountButton = document.getElementById("accountButton");
 const loginForm = document.getElementById("loginForm");
 const registerForm = document.getElementById("registerForm");
+const registerPasswordInput = registerForm.elements.namedItem("password");
 const googleSignInButton = document.getElementById("googleSignIn");
 const authActionControls = document.querySelectorAll("[data-auth-action]");
 window.pinoyAuthState = {
@@ -31,6 +32,25 @@ function setAuthActionsEnabled(enabled) {
   authActionControls.forEach(control => { control.disabled = !enabled; });
 }
 
+function getPasswordRequirements(password) {
+  return {
+    length: password.length >= 12,
+    lowercase: /[a-z]/.test(password),
+    uppercase: /[A-Z]/.test(password),
+    number: /\d/.test(password),
+    symbol: /[^A-Za-z0-9]/.test(password)
+  };
+}
+
+function updatePasswordRequirements() {
+  const requirements = getPasswordRequirements(registerPasswordInput.value);
+  Object.entries(requirements).forEach(([rule, isMet]) => {
+    const item = registerForm.querySelector(`[data-password-rule="${rule}"]`);
+    item.classList.toggle("met", isMet);
+    item.setAttribute("aria-label", `${item.textContent}: ${isMet ? "met" : "not met"}`);
+  });
+}
+
 function showAuthForm(form) {
   const isRegistering = form === registerForm;
   const showRegisterButton = document.getElementById("showRegister");
@@ -54,7 +74,7 @@ function getErrorMessage(error) {
     "auth/popup-closed-by-user": "The Google sign-in window was closed before finishing.",
     "auth/too-many-requests": "Too many attempts. Please wait a moment and try again.",
     "auth/unauthorized-domain": "Add this website's domain to Firebase Authentication's Authorized domains.",
-    "auth/weak-password": "Choose a stronger password with at least 6 characters."
+    "auth/weak-password": "Choose a stronger password that meets all the requirements."
   };
   return messages[error.code] || "Authentication failed. Please check your details and try again.";
 }
@@ -93,14 +113,33 @@ registerForm.addEventListener("submit", async event => {
   event.preventDefault();
   if (!auth) return;
   const formData = new FormData(registerForm);
+  const username = String(formData.get("displayName")).trim();
+  const password = String(formData.get("password"));
+  const confirmation = String(formData.get("confirmPassword"));
+
+  if (!/^[A-Za-z0-9_]{3,20}$/.test(username)) {
+    setAuthMessage("Use a username with 3–20 letters, numbers, or underscores.");
+    return;
+  }
+  if (Object.values(getPasswordRequirements(password)).some(isMet => !isMet)) {
+    setAuthMessage("Your password must meet every requirement listed above.");
+    return;
+  }
+  if (password !== confirmation) {
+    setAuthMessage("The passwords do not match.");
+    return;
+  }
+
   try {
-    const credential = await firebaseAuth.createUserWithEmailAndPassword(auth, formData.get("email"), formData.get("password"));
-    await firebaseAuth.updateProfile(credential.user, {displayName: String(formData.get("displayName")).trim()});
+    const credential = await firebaseAuth.createUserWithEmailAndPassword(auth, formData.get("email"), password);
+    await firebaseAuth.updateProfile(credential.user, {displayName: username});
   } catch (error) {
     console.error("Firebase registration failed:", error);
     setAuthMessage(getErrorMessage(error));
   }
 });
+
+registerPasswordInput.addEventListener("input", updatePasswordRequirements);
 
 googleSignInButton.addEventListener("click", async () => {
   if (location.protocol === "file:") {
